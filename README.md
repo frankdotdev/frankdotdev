@@ -27,7 +27,7 @@ I build secure, scalable software across the Web2 and Web3 spectrum.
 ---
 
 ### 📈 Philosophy
-> "I build software solutions across any field—ensuring scalability, security, and best practices. From automation scripts to enterprise systems, if it solves a problem, I build it."
+> "I build software solutions across any field, ensuring scalability, security, and best practices. From automation scripts to enterprise systems, if it solves a problem, I build it."
 
 ---
 
