@@ -1,35 +1,40 @@
-# 👋 Hello, I'm Frank Kelechi Oge 
+# Hi, I'm Frank Kelechi Oge <frankdotdev/>
 
-## 🚀 About Me  
-I’m a **passionate developer** who loves **turning ideas into real-world solutions**.  
-With strong expertise in **Python, Django, and MySQL**, I’ve worked on diverse projects, from **Telegram bots** to **full-fledged web applications**.  
+### 🚀 Software Architect | Web3 Enthusiast | Founder @ Hackverse Technologies
 
-I also enjoy **frontend development**, ensuring user-friendly interfaces for seamless experiences.  
-My expertise extends to **database analysis, AI innovations, and automation**, making data work smarter.  
+I believe that software is the ultimate problem solver. My philosophy is simple: **Build solutions.** Whether it's a complex Web3 DApp, a high-frequency trading bot, or a scalable SaaS platform, I architect systems that bridge the gap between "Problem" and "Solution."
 
-## 🛠️ Tech Stack  
-- **Backend:** Python, Django, Django REST Framework, Fastapi, Node.JS 
-- **Frontend:** HTML, CSS, JavaScript, React, Tailwind CSS, NextJS, Shadcn, Tailwind UI, Material UI, Chakra UI
-- **Database:** MySQL, PostgreSQL, Firebase, Supabase, PlanetDB  
-- **Other Tools:** Git, Excel, PowerPoint, APIs, AI/ML (Exploring)  
-
-## 📌 Projects & Experience  
-- ✅ Built **Telegram bots** with Python for automation  
-- ✅ Developed **full-stack web applications** using Django & MySQL  
-- ✅ Conducted **in-depth database analysis & data visualization**  
-- ✅ Explored **AI integrations & automation solutions**  
-
-## 📫 Connect with Me  
-Feel free to reach out for **collaborations, discussions, or just tech talk!**  
-🔗 **GitHub:** [github.com/hack3rvirus](https://github.com/hack3rvirus)  
-🔗 **Twitter/X:** [@BuiltByFrank](https://x.com/BuiltByFrank)  
-🔗 **LinkedIn:** [linkedin.com/in/ogekelechifrank](https://www.linkedin.com/in/ogekelechifrank)  
-🔗 **Telegram:** [https://t.me/HACK3RVIRUS](https://t.me/HACK3RVIRUS)  
+I am the Founder of **Hackverse Software Solutions**, where we turn technical complexity into business efficiency.
 
 ---
-💡 **Always learning, building, and pushing the boundaries of technology!**
 
-<!---
-hack3rvirus/hack3rvirus is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+### 👨‍💻 What I Do
+I build secure, scalable software across the Web2 and Web3 spectrum.
+* **Web Development:** Full-stack apps using **Python (Django/FastAPI)** and **React/Next.js**.
+* **Web3 & Blockchain:** Building the decentralized future with **Solidity**, **Rust**, and **Web3.py**.
+* **Automation & Bots:** Custom architectures for Telegram, Discord, and WhatsApp using **Python** & **AI**.
+* **System Architecture:** Designing database schemas and backend logic that scale.
+
+---
+
+### 🛠 Tech Stack
+* **Languages:** Python, JavaScript/TypeScript, Rust, Solidity, SQL.
+* **Backend:** Django, FastAPI, Node.js.
+* **Frontend:** React, Next.js, Tailwind CSS.
+* **Web3:** Solana, Ethereum, Smart Contracts.
+* **DevOps:** Docker, Git, CI/CD, Linux.
+
+---
+
+### 📈 Philosophy
+> "I build software solutions across any field—ensuring scalability, security, and best practices. From automation scripts to enterprise systems, if it solves a problem, I build it."
+
+---
+
+### 🌐 Let's Connect
+* **Portfolio:** [frankdotdev.vercel.app](https://frankdotdev.vercel.app/)
+* **Agency:** Hackverse Technologies
+* **LinkedIn:** [Frank Kelechi Oge](https://linkedin.com/in/frankdotdev)
+* **X (Twitter):** [@frankdotdev](https://x.com/frankdotdev)
+
+![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=frankdotdev&show_icons=true&theme=radical)
