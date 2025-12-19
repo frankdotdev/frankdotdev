@@ -23,6 +23,7 @@ I build secure, scalable software across the Web2 and Web3 spectrum.
 * **Frontend:** React, Next.js, Tailwind CSS.
 * **Web3:** Solana, Ethereum, Smart Contracts.
 * **DevOps:** Docker, Git, CI/CD, Linux.
+* **Database and BAAS:** MySQL, Postgresql, Firebase, Supabase, Appwrite.
 
 ---
 
