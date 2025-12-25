@@ -33,9 +33,9 @@ I build secure, future-proof software across Web2, Web3, and AI.
 ---
 
 ### 🌐 Let's Connect
-* **Portfolio:** [frankdotdev.vercel.app](https://frankdotdev.vercel.app/)
+* **Portfolio:** [frankdotdev.vercel.app](https://frankoge.com)
 * **Agency:** Hackverse Technologies
-* **LinkedIn:** [Frank Kelechi Oge](https://linkedin.com/in/frankdotdev)
+* **LinkedIn:** [Frank Kelechi Oge](https://linkedin.com/in/frank-kelechi-oge)
 * **X (Twitter):** [@frankdotdev](https://x.com/frankdotdev)
 
 
