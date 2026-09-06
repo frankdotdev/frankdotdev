@@ -1,209 +1,107 @@
-# frankoge.com — Portfolio Website
+# Frank Kelechi Oge
 
-**Frank Kelechi Oge** · frankdotdev · Hackverse Software Solutions
+Software Developer · Founder, Hackverse Software Solutions · Enugu, Nigeria
 
-A sharp, minimal, hackerish personal portfolio built with **Next.js 14**, **Tailwind CSS**, **JetBrains Mono**, and **Framer Motion** concepts. Light/dark mode, AI chatbot, full SEO, responsive across all devices.
+[frankoge.com](https://frankoge.com) &nbsp;|&nbsp; [LinkedIn](https://linkedin.com/in/frank-kelechi-oge) &nbsp;|&nbsp; [X](https://x.com/frankdotdev) &nbsp;|&nbsp; ogekcfrankie@gmail.com
 
----
+<br>
 
-## Stack
+## About Me
 
-| Layer | Tech |
-|---|---|
-| Framework | Next.js 14 (App Router) |
-| Styling | Tailwind CSS + CSS Variables |
-| Fonts | JetBrains Mono + Space Grotesk |
-| Icons | Phosphor Icons |
-| Chatbot | Anthropic Claude API |
-| Email | Resend (optional) |
-| Deploy | Vercel (recommended) |
+I'm a software developer and founder of **Hackverse Software Solutions**, building full-stack, AI, and Web3 systems for clients and for products of my own. I graduated with a Second Class Upper B.Sc in Computer Science from Caritas University, Enugu, in 2026.
 
----
+My approach to software is simple: **it's the most direct form of leverage a person can build.** I'm less interested in writing code for its own sake and more in closing the gap between what a system currently is and what it needs to become — whether that's a school running attendance on paper, a business with no online presence, or a trading desk that needs faster execution.
 
-## Getting Started
+What that looks like in practice:
 
-### 1. Install dependencies
+- I build for production, not demos — auth, data modeling, and infra get the same attention as the feature people actually see.
+- I move across the stack by necessity, not preference — a project usually needs a backend, an AI layer, and a frontend that doesn't feel like a template.
+- I ship fast without skipping the boring parts: multi-tenancy, payments, offline sync, and things not breaking at 2am.
 
-```bash
-npm install
-```
+<br>
 
-### 2. Set up environment variables
+## What I Work On
 
-```bash
-cp .env.example .env.local
-```
+- **Full-stack platforms** — multi-tenant SaaS (ERPs, business tools) built on Next.js, FastAPI, Django, and Go
+- **AI-integrated products** — LLM-powered learning, assessment, and prediction systems
+- **Web3 & blockchain** — Solidity smart contracts, Solana integrations, on-chain data tooling
+- **Trading & automation systems** — algorithmic trading engines and signal bots for crypto/forex
+- **Technical consulting** — architecture, code review, and stack decisions for early-stage teams
 
-Then open `.env.local` and fill in your values:
+<br>
 
-```env
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-RESEND_API_KEY=your_resend_api_key_here        # optional, for contact form
-NEXT_PUBLIC_SITE_URL=https://frankoge.com
-```
+## Skills
 
-### 3. Add your images
+**Languages**
 
-Place your photos in `public/images/`:
+![Python](https://skillicons.dev/icons?i=python) ![Go](https://skillicons.dev/icons?i=go) ![Rust](https://skillicons.dev/icons?i=rust) ![TypeScript](https://skillicons.dev/icons?i=typescript) ![JavaScript](https://skillicons.dev/icons?i=javascript) ![Solidity](https://skillicons.dev/icons?i=solidity)
 
-```
-public/
-  images/
-    frank1.png   ← Used on About page hero
-    frank2.png   ← Used on Home page hero + Philosophy
-    frank3.png
-    ...
-    frank20.png  ← Gallery uses frank1.png → frank20.png
-```
+**Frameworks**
 
-The gallery on the About page will auto-scroll these in two infinite rows.
-If an image is missing it falls back to `frank1.png` or `frank2.png`.
+![Next.js](https://skillicons.dev/icons?i=nextjs) ![React](https://skillicons.dev/icons?i=react) ![Django](https://skillicons.dev/icons?i=django) ![FastAPI](https://skillicons.dev/icons?i=fastapi) ![Nodejs](https://skillicons.dev/icons?i=nodejs) ![NestJS](https://skillicons.dev/icons?i=nestjs)
 
-### 4. Run the dev server
+**Data & Infrastructure**
 
-```bash
-npm run dev
-```
+![PostgreSQL](https://skillicons.dev/icons?i=postgres) ![MySQL](https://skillicons.dev/icons?i=mysql) ![Redis](https://skillicons.dev/icons?i=redis) ![Docker](https://skillicons.dev/icons?i=docker) ![Supabase](https://skillicons.dev/icons?i=supabase) ![Firebase](https://skillicons.dev/icons?i=firebase)
 
-Open [http://localhost:3000](http://localhost:3000)
+**AI & Web3**
 
----
+![OpenAI](https://skillicons.dev/icons?i=openai) ![Solana](https://skillicons.dev/icons?i=solana)
 
-## Pages
+<br>
 
-| Route | Page |
-|---|---|
-| `/` | Home — hero, tech marquee, Stella AI feature, services, philosophy quote, CTA |
-| `/about` | About — bio, journey timeline, tech stack, experience, education, image gallery |
-| `/solutions` | Solutions — full services grid with features + stack per service |
-| `/builds` | Builds — filterable project grid (featured + full list) |
-| `/blog` | Blog — CMS-ready post listing (shows Medium fallback when empty) |
-| `/philosophy` | Philosophy — Software as a Solution manifesto |
-| `/contact` | Contact — form, availability status, all social links |
+## Projects
 
----
+**[Stella AI](https://stellaai.pro)** — AI Learning Operating System
+Turns lectures, PDFs, and raw notes into structured notes, flashcards, exams, summaries, and knowledge graphs. Subject of my final-year project.
+`React` `Next.js` `FastAPI` `Django` `PostgreSQL` `Redis`
 
-## CMS Integration (Blog)
+**Cognitio ERP (SchoolOS)** — School Operating System for African schools
+Multi-tenant ERP covering admissions, attendance, results, fees, and parent/teacher/principal dashboards, built offline-resilient for underdigitized regions. Part of the wider Cognitio education ecosystem alongside Stella AI and Cognitio Assess.
+`Next.js` `FastAPI` `PostgreSQL` `Redis` `Celery`
 
-The blog page at `src/components/BlogClient.tsx` is CMS-ready. To add posts:
+**Cognitio Assess (ExamOS)** — Assessment Operating System
+Practice mode for individuals, cloud exams for schools, and a secure on-prem deployment for institutions that need real exam integrity — not just another CBT app.
+`FastAPI` `PostgreSQL` `Next.js`
 
-```ts
-// In src/components/BlogClient.tsx — replace the empty array:
-const CMS_POSTS = [
-  {
-    slug: "your-post-slug",
-    title: "Your Post Title",
-    excerpt: "A short excerpt...",
-    date: "2025-12-01",
-    category: "AI/ML",
-    readTime: "5 min read",
-  },
-  // Add more posts here, or connect to a headless CMS
-];
-```
+**Fluo** — universal business link platform
+One link and QR code per business acting as profile, booking/ordering system, chat, and payments — configurable for any business type, from barbers to hotels.
+`Next.js` `FastAPI` `PostgreSQL` `Paystack`
 
-For a headless CMS, fetch posts from your CMS in the `BlogPage` server component (`src/app/blog/page.tsx`) and pass them down as props.
+**EatSafe** — food safety and health intelligence PWA
+AI-driven food safety insights for African and global users, with Telegram and WhatsApp access alongside the web app.
+`NestJS` `Fastify` `Groq AI` `Paystack`
 
----
+**GTPOE (Global Trend + Pullback Opportunity Engine)** — algorithmic trading engine
+Scans hundreds of forex instruments daily for trend-and-pullback setups, scores and ranks them, and executes only the single highest-quality trade per day.
+`Python` `MetaTrader 5` `SQLite`
 
-## Chatbot
+**Babel** — AI language-learning platform
+Emotionally engaging, relationship-based conversation practice across 25+ languages.
+`Next.js` `FastAPI` `Convex`
 
-The floating AI assistant in the bottom-right corner is powered by Claude Haiku via `/api/chat`.
+**Inkognito** — anonymous social platform
+Confession feed, stranger chat, and an AI companion, built for people who want to speak freely without an identity attached.
+`Next.js` `Convex`
 
-- Set `ANTHROPIC_API_KEY` in `.env.local`
-- The chatbot has full context about Frank, his projects, skills, and philosophy
-- To update the context, edit `FRANK_CONTEXT` in `src/app/api/chat/route.ts`
-- To integrate an external chatbot widget instead, replace the `<ChatbotWidget />` import in `src/app/layout.tsx` with a `<script>` tag or iframe embed
+**Ikegwuru** — e-commerce platform for Kwechiri
+Full storefront and admin CMS for the Kwechiri clothing brand out of Asaba, with an AI chatbot and live delivery tracking.
+`Next.js` `Groq AI` `Paystack` `Leaflet`
 
----
+More builds → [frankoge.com/builds](https://frankoge.com/builds)
 
-## Contact Form Email
+<br>
 
-By default, form submissions are logged to the console. To enable real email delivery:
+## GitHub Stats
 
-1. Sign up at [resend.com](https://resend.com) (free tier)
-2. Add `RESEND_API_KEY` to `.env.local`
-3. Uncomment the Resend block in `src/app/api/contact/route.ts`
-4. Install Resend: `npm install resend`
+<p>
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=frankdotdev&show_icons=true&hide_border=true&count_private=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=frankdotdev&layout=compact&hide_border=true" />
+</p>
 
----
+<br>
 
-## Deployment (Vercel)
+## Get in Touch
 
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-
-# Set environment variables on Vercel dashboard or:
-vercel env add ANTHROPIC_API_KEY
-vercel env add RESEND_API_KEY
-```
-
----
-
-## Customization Quick Reference
-
-| What to change | Where |
-|---|---|
-| Name, bio, philosophy | `src/components/PhilosophyClient.tsx`, `AboutClient.tsx` |
-| Projects list | `src/components/BuildsClient.tsx` → `PROJECTS` array |
-| Services | `src/components/SolutionsClient.tsx` → `SERVICES` array |
-| Social links | `src/components/Footer.tsx` + `ContactClient.tsx` |
-| Chatbot context | `src/app/api/chat/route.ts` → `FRANK_CONTEXT` |
-| Blog posts | `src/components/BlogClient.tsx` → `CMS_POSTS` array |
-| SEO metadata | `src/app/layout.tsx` + each page's `metadata` export |
-| Colors / theme | `src/app/globals.css` → CSS variables |
-| Tech stack rows | `src/components/HomeClient.tsx` + `AboutClient.tsx` → `TECH_ROWS` |
-
----
-
-## Structure
-
-```
-src/
-  app/
-    layout.tsx          ← Root layout, SEO metadata, fonts
-    globals.css         ← Design system: CSS variables, animations, utilities
-    page.tsx            ← Home
-    about/page.tsx
-    solutions/page.tsx
-    builds/page.tsx
-    blog/page.tsx
-    philosophy/page.tsx
-    contact/page.tsx
-    not-found.tsx
-    sitemap.ts          ← Auto-generated sitemap.xml
-    robots.ts           ← robots.txt
-    api/
-      chat/route.ts     ← AI chatbot endpoint
-      contact/route.ts  ← Contact form endpoint
-  components/
-    ThemeProvider.tsx   ← Dark/light mode context
-    Navbar.tsx          ← Sticky nav with mobile menu
-    Footer.tsx          ← Full footer with social links
-    ChatbotWidget.tsx   ← Floating AI assistant
-    Reveal.tsx          ← Scroll-triggered fade-in
-    MarqueeRow.tsx      ← Infinite scrolling rows
-    JsonLd.tsx          ← Structured data for SEO
-    HomeClient.tsx      ← Home page (interactive)
-    AboutClient.tsx     ← About page
-    SolutionsClient.tsx ← Solutions page
-    BuildsClient.tsx    ← Builds/projects page
-    BlogClient.tsx      ← Blog page (CMS-ready)
-    PhilosophyClient.tsx
-    ContactClient.tsx
-public/
-  images/               ← Add frank1.png → frank20.png here
-  site.webmanifest
-  og-image.jpg          ← Add 1200×630 OG image
-  favicon.ico
-```
-
----
-
-## License
-
-Personal portfolio — Frank Kelechi Oge © 2026. All rights reserved.
+Open to freelance projects, full-time roles, SaaS partnerships, and open-source collaboration.
+[Link up →](https://frankoge.com/contact)
