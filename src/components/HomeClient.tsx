@@ -55,10 +55,10 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: "55+", label: "GitHub Repos" },
-  { value: "5K+", label: "Dev Hours" },
+  { value: "30+", label: "Projects Built" },
+  { value: "80+", label: "GitHub Repos" },
+  { value: "10K+", label: "Dev Hours" },
   { value: "2020", label: "Started Coding" },
-  { value: "∞", label: "Problems to Solve" },
 ];
 
 export default function HomeClient() {

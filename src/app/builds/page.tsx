@@ -4,7 +4,7 @@ import BuildsClient from "@/components/BuildsClient";
 export const metadata: Metadata = {
   title: "Builds",
   description:
-    "Projects and builds by Frank Kelechi Oge — Stella AI, Portal Web3, HackerAutoTradeBot, OMPH Church Website, and more.",
+    "Projects, offline-first mobile apps, and systems built by Frank Kelechi Oge — ShopFlow, Fiorio, Hacker's Medicare, Stella AI, Fluo, Inkognito, and client solutions with APK downloads.",
   alternates: { canonical: "https://frankoge.com/builds" },
 };
 

@@ -1,15 +1,71 @@
 "use client";
 import { useState } from "react";
-import { ArrowUpRight, GithubLogo } from "@phosphor-icons/react";
+import { ArrowUpRight, GithubLogo, DownloadSimple } from "@phosphor-icons/react";
 import Reveal from "./Reveal";
 
-const CATEGORIES = ["All", "AI/ML", "Web3", "Web App", "Bot", "Automation"];
+const CATEGORIES = ["All", "Mobile", "AI/ML", "Web App", "Web3", "Bot", "Automation"];
 
-const PROJECTS = [
+interface Project {
+  title: string;
+  subtitle: string;
+  desc: string;
+  category: string;
+  featured: boolean;
+  status: "Live" | "Private" | "In Progress";
+  live: string | null;
+  repo: string | null;
+  download?: string | null;
+  downloadLabel?: string;
+  stack: string[];
+}
+
+const PROJECTS: Project[] = [
+  // --- Mobile Apps (Top Priority - Downloadable) ---
+  {
+    title: "ShopFlow",
+    subtitle: "Offline-First Mobile E-Commerce Marketplace",
+    desc: "A 100% offline-first, zero-latency mobile marketplace running on-device with React Native, Expo, and SQLite. Features 112 products across 13 categories, instant multi-facet filtering, variant selection, a 5-step checkout wizard with promo discounts, live order tracking, and an integrated Store Manager admin dashboard with write-through persistence.",
+    category: "Mobile",
+    featured: true,
+    status: "Live",
+    live: null,
+    download: "https://expo.dev/accounts/frankdotdev/projects/shopflow/builds/20bee6c6-9fc1-4840-8728-90f558ab4705",
+    downloadLabel: "Download APK",
+    repo: "https://github.com/frankdotdev/shopflow",
+    stack: ["React Native", "Expo SDK 51", "Expo Router", "expo-sqlite", "Zustand", "TypeScript"],
+  },
+  {
+    title: "Fiorio",
+    subtitle: "Luxury Travel Discovery & Unified Booking App",
+    desc: "An offline-first, all-in-one luxury travel booking platform built with React Native and Expo SDK 52. Consolidates hotels, flights, car rentals, curated experiences, and dining into a single polymorphic booking engine. Pre-seeded with 56 global cities and ~950 listings in local SQLite, featuring dynamic flight routing, multi-currency conversion, and role switching (Customer, Admin, Partner).",
+    category: "Mobile",
+    featured: true,
+    status: "Live",
+    live: null,
+    download: "/apps/fiorio.apk",
+    downloadLabel: "Download APK (81MB)",
+    repo: "https://github.com/frankdotdev/fiorio",
+    stack: ["React Native", "Expo SDK 52", "Expo Router", "expo-sqlite", "Zustand", "TypeScript", "CI/CD"],
+  },
+  {
+    title: "Hacker's Medicare",
+    subtitle: "Offline-First Healthcare & Telehealth App",
+    desc: "A self-contained healthcare mobile application with an embedded relational database (expo-sqlite). Features 26 pre-seeded doctors across 12 specialties, frictionless multi-step appointment booking with dependent support, interactive telehealth video consultation room with live call timer, clinical lab results tracking, and dual-persona support (Patient + Provider dashboard).",
+    category: "Mobile",
+    featured: true,
+    status: "Live",
+    live: null,
+    download: "https://expo.dev/accounts/frankdotdev/projects/hackers-medicare/builds/3bc1fe00-6383-4c5c-8644-dea8c78b0e41",
+    downloadLabel: "Download APK",
+    repo: "https://github.com/frankdotdev/HACKERS-MEDICARE",
+    stack: ["React Native", "Expo SDK 57", "Expo Router 4", "expo-sqlite", "Zustand", "TypeScript"],
+  },
+
+  // --- Flagship Platforms ---
   {
     title: "Stella AI",
     subtitle: "The AI Learning Operating System",
-    desc: "Stella AI transforms lectures, PDFs, and knowledge sources into intelligent learning systems. Automatically generates AI Notes, Flashcards, Exams, Summaries, and Knowledge Graphs.",
+    desc: "AI-powered learning operating system built first for Nigeria, designed for the world. Transforms lectures, textbooks, and notes into intelligent study systems — auto-generated notes, summaries, flashcards, exams, podcast dialogues, and conversations with 20+ historical thinkers in 8 learning modes with knowledge cards and multi-format conversions.",
     category: "AI/ML",
     featured: true,
     status: "Live",
@@ -18,11 +74,125 @@ const PROJECTS = [
     stack: ["React", "Next.js", "FastAPI", "Django REST", "PostgreSQL", "Celery", "Redis"],
   },
   {
+    title: "Fluo",
+    subtitle: "Mobile-First Business Operating System",
+    desc: "A multi-tenant, mobile-first business operating system providing businesses with a unified link (fluo.africa/slug) and dynamic QR code serving as digital storefront, booking/ordering engine, automated cashier, AI receptionist (Claude 3.5 tool-calling), Paystack/Flutterwave split payments, and atomic PDF receipts.",
+    category: "Web App",
+    featured: true,
+    status: "Live",
+    live: "https://bizfluo.vercel.app",
+    repo: null,
+    stack: ["Next.js", "TypeScript", "Claude 3.5 AI", "Paystack", "Flutterwave", "PostgreSQL", "Tailwind CSS"],
+  },
+  {
+    title: "Inkognito",
+    subtitle: "Speak Without a Face — Anonymous Platform",
+    desc: "An anonymous three-pillar social platform: Confession Feed with snippet previews and reactions, Omegle-style Stranger Chat with peer-to-peer WebRTC video and Convex real-time signaling, and Groq-powered AI Companion (Llama 3.1-8B-Instant) with session-only streaming. Zero accounts required, zero traces left.",
+    category: "Web App",
+    featured: true,
+    status: "Live",
+    live: "https://inkognito-sandy.vercel.app/",
+    repo: null,
+    stack: ["Next.js 14", "Convex", "Groq AI (Llama 3.1)", "WebRTC", "AWS Rekognition", "Cloudflare R2"],
+  },
+  {
+    title: "Ikegwuru",
+    subtitle: "Kwechiri — Brand Identity & Editorial Commerce",
+    desc: "Clothing built for those who endure. Rooted in the Kwechiri philosophy — remaining unbroken when circumstances conspire to fracture your spirit. A digital expression of resilience, authentic craftsmanship, and self-mastery with editorial storytelling and responsive commerce.",
+    category: "Web App",
+    featured: true,
+    status: "Live",
+    live: "https://ikegwuru.vercel.app/",
+    repo: null,
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+
+  // --- Client Demo Builds ---
+  {
+    title: "Rhaina Cosmetics",
+    subtitle: "Beauty Store, Skincare & Training",
+    desc: "Rhaina Cosmetics — beauty store, skincare, cosmetics, fragrance, beauty spa and training. Enhance your beauty, elevate your confidence with product catalogs and service appointments.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://rhainacosmetics.netlify.app/",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "Kitchen Royale",
+    subtitle: "Restaurant & Bakery, Abakaliki",
+    desc: "Kitchen Royale is a restaurant and bakery in Abakaliki serving Nigerian favourites, continental meals, fresh bakes and drinks. Features online food ordering for pickup/delivery and table reservations.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://kitchenroyale.netlify.app",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "Itus Global Construction",
+    subtitle: "Building With Precision & Integrity",
+    desc: "Corporate portal for Itus Global Construction Nig Ltd delivering building construction, civil engineering, structural works and interior finishing solutions in Abakaliki, Ebonyi State, Nigeria.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://itus-global-construction-nig-ltd.netlify.app",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "Eaglefresh Properties",
+    subtitle: "Real Estate Sales, Rent & Property Management",
+    desc: "Eaglefresh Properties Limited offers verified property sales, acquisitions, rent/lease listings, and full property management services with online inquiry handling.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://eaglefreshproperties.netlify.app/",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "Naya's Kitchen",
+    subtitle: "Good Food. Happy People.",
+    desc: "Naya's Kitchen prepares delicious Nigerian soups, stews, rice dishes, breakfast and drinks in Emene. Order online for pickup or delivery, or book catering for your next event.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://nayaskitchen.netlify.app",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "Winny Bakes & Creams",
+    subtitle: "Custom Cakes, Ice Cream, Pizza & Small Chops",
+    desc: "Winny Bakes & Creams — custom celebration cakes, ice cream, pizza, popcorn and small chops on Afikpo Road. Order online for pickup or doorstep delivery.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://winnybakery.netlify.app/",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+  {
+    title: "NLM Autos",
+    subtitle: "Drive the Lifestyle You Desire",
+    desc: "Premium automobile dealership and auto-services platform. Browse verified vehicles, schedule test drives, and experience luxury automotive solutions.",
+    category: "Web App",
+    featured: false,
+    status: "Live",
+    live: "https://nlmautos.netlify.app/",
+    repo: null,
+    stack: ["React", "Tailwind CSS", "Netlify"],
+  },
+
+  // --- Web3, Bot & Full-Stack Projects ---
+  {
     title: "Portal Web3 Game Site",
     subtitle: "Play-to-earn game platform",
     desc: "A Web3 game site where users can get rewarded for playing and the top users are displayed on a real-time leaderboard. Worked on the backend architecture and API.",
     category: "Web3",
-    featured: true,
+    featured: false,
     status: "Live",
     live: "#",
     repo: "#",
@@ -44,7 +214,7 @@ const PROJECTS = [
     subtitle: "Full-featured Church Web App",
     desc: "A full-featured web application for Our Mother of Perpetual Help Chaplaincy. Features Mass Intentions, Prayer Wall, Events Calendar, Marketplace, Admin Dashboard, and PWA support.",
     category: "Web App",
-    featured: true,
+    featured: false,
     status: "Live",
     live: "#",
     repo: "#",
@@ -172,15 +342,14 @@ export default function BuildsClient() {
             Builds
           </h1>
           <p className="text-base leading-relaxed max-w-2xl mb-4" style={{ color: "var(--text-secondary)" }}>
-            A collection of things I've built — from AI systems and Web3 protocols to automation bots and
-            full-stack applications. Some are public, some are private. All are real.
+            A curated collection of production systems, offline-first mobile apps, AI platforms, Web3 protocols, and client solutions. Real software engineered for real humans — with direct APK downloads available for mobile builds.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap gap-6 mt-8">
             {[
-              { v: "12+", l: "Projects Built" },
-              { v: "38+", l: "GitHub Repos" },
+              { v: "30+", l: "Projects Built" },
+              { v: "80+", l: "GitHub Repos" },
               { v: "5K+", l: "Dev Hours" },
               { v: "100%", l: "Client Satisfaction" },
             ].map(({ v, l }) => (
@@ -193,6 +362,32 @@ export default function BuildsClient() {
                 </span>
               </div>
             ))}
+          </div>
+
+          {/* Mobile Apps Highlight Banner */}
+          <div
+            className="mt-8 p-4 border flex items-center justify-between flex-wrap gap-3 font-mono text-xs"
+            style={{
+              borderColor: "var(--border)",
+              backgroundColor: "var(--bg-secondary)",
+            }}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#4ade80" }} />
+              <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
+                Mobile Apps Available:
+              </span>
+              <span style={{ color: "var(--text-muted)" }}>
+                ShopFlow, Fiorio, and Hacker&apos;s Medicare are ready for standalone Android APK download.
+              </span>
+            </div>
+            <button
+              onClick={() => setActiveFilter("Mobile")}
+              className="hover-line text-xs font-medium cursor-pointer"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Filter Mobile Apps →
+            </button>
           </div>
         </Reveal>
       </section>
@@ -219,15 +414,15 @@ export default function BuildsClient() {
 
       {/* Featured projects */}
       {featured.length > 0 && (
-        <section className="px-6 md:px-10 max-w-7xl mx-auto mb-6">
+        <section className="px-6 md:px-10 max-w-7xl mx-auto mb-12">
           <p className="font-mono text-xs tracking-widest uppercase mb-6" style={{ color: "var(--text-faint)" }}>
-            Featured
+            {activeFilter === "All" ? "Featured Builds" : `${activeFilter} Builds`}
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{ backgroundColor: "var(--border-subtle)" }}>
             {featured.map((p, i) => (
-              <Reveal key={p.title} delay={i * 80}>
+              <Reveal key={p.title} delay={i * 60}>
                 <div
-                  className="p-8 flex flex-col justify-between min-h-64 group"
+                  className="p-8 flex flex-col justify-between min-h-64 group h-full"
                   style={{ backgroundColor: "var(--bg)" }}
                   onMouseEnter={(e) =>
                     ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-secondary)")
@@ -237,16 +432,30 @@ export default function BuildsClient() {
                   }
                 >
                   <div>
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start justify-between mb-3 gap-2">
                       <div>
-                        <h2 className="font-mono text-lg font-medium mb-1" style={{ color: "var(--text-primary)" }}>
-                          {p.title}
-                        </h2>
+                        <div className="flex items-center gap-2 mb-1">
+                          <h2 className="font-mono text-lg font-medium" style={{ color: "var(--text-primary)" }}>
+                            {p.title}
+                          </h2>
+                          {p.category === "Mobile" && (
+                            <span
+                              className="font-mono text-[10px] px-1.5 py-0.5 border"
+                              style={{
+                                borderColor: "#4ade80",
+                                color: "#4ade80",
+                                backgroundColor: "rgba(74, 222, 128, 0.08)",
+                              }}
+                            >
+                              Android APK
+                            </span>
+                          )}
+                        </div>
                         <p className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
                           {p.subtitle}
                         </p>
                       </div>
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-1.5 shrink-0">
                         <span
                           className="w-1.5 h-1.5 rounded-full"
                           style={{ backgroundColor: STATUS_COLORS[p.status] || "#888" }}
@@ -265,7 +474,24 @@ export default function BuildsClient() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center flex-wrap gap-4 pt-2">
+                    {p.download && (
+                      <a
+                        href={p.download}
+                        target={p.download.startsWith("http") ? "_blank" : undefined}
+                        rel={p.download.startsWith("http") ? "noopener noreferrer" : undefined}
+                        download={p.download.endsWith(".apk") ? true : undefined}
+                        className="font-mono text-xs flex items-center gap-1.5 px-3 py-1.5 border transition-all duration-200"
+                        style={{
+                          borderColor: "var(--text-primary)",
+                          backgroundColor: "var(--text-primary)",
+                          color: "var(--bg)",
+                        }}
+                      >
+                        <DownloadSimple size={13} weight="bold" />
+                        <span>{p.downloadLabel || "Download APK"}</span>
+                      </a>
+                    )}
                     {p.live && p.live !== "#" && (
                       <a
                         href={p.live}
@@ -300,11 +526,11 @@ export default function BuildsClient() {
       {rest.length > 0 && (
         <section className="px-6 md:px-10 max-w-7xl mx-auto pb-24">
           <p className="font-mono text-xs tracking-widest uppercase mb-6" style={{ color: "var(--text-faint)" }}>
-            All Builds
+            {activeFilter === "All" ? "All Other Builds" : `More ${activeFilter} Builds`}
           </p>
           <div className="flex flex-col gap-px" style={{ backgroundColor: "var(--border-subtle)" }}>
             {rest.map((p, i) => (
-              <Reveal key={p.title} delay={i * 50}>
+              <Reveal key={p.title} delay={i * 40}>
                 <div
                   className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 group"
                   style={{ backgroundColor: "var(--bg)" }}
@@ -340,7 +566,24 @@ export default function BuildsClient() {
                           <span key={s} className="tag">{s}</span>
                         ))}
                       </div>
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center flex-wrap gap-4">
+                        {p.download && (
+                          <a
+                            href={p.download}
+                            target={p.download.startsWith("http") ? "_blank" : undefined}
+                            rel={p.download.startsWith("http") ? "noopener noreferrer" : undefined}
+                            download={p.download.endsWith(".apk") ? true : undefined}
+                            className="font-mono text-xs flex items-center gap-1.5 px-3 py-1.5 border transition-all duration-200"
+                            style={{
+                              borderColor: "var(--text-primary)",
+                              backgroundColor: "var(--text-primary)",
+                              color: "var(--bg)",
+                            }}
+                          >
+                            <DownloadSimple size={13} weight="bold" />
+                            <span>{p.downloadLabel || "Download APK"}</span>
+                          </a>
+                        )}
                         {p.live && p.live !== "#" && (
                           <a
                             href={p.live}

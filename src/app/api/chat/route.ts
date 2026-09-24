@@ -12,9 +12,15 @@ About Frank:
 
 Skills: Python, JavaScript/TypeScript, Rust, Solidity, Django, FastAPI, React, Next.js, Tailwind CSS, PostgreSQL, MySQL, Redis, Celery, Docker, Web3.js, Web3.py, LangChain, OpenAI API, React Native
 
-Flagship Product: Stella AI (stellaai.pro) — The AI Learning Operating System. Transforms lectures, PDFs, and knowledge sources into intelligent learning systems (notes, flashcards, exams, summaries, knowledge graphs).
-
-Other notable builds: Portal Web3 Game Site, HackerAutoTradeBot (crypto trading), Vybe Whale Alert Bot, OMPH Catholic Church Website, Caritas Catholic Church Website, Signet (signet.xyz), ZK Compression Cost Visualizer, Zugis Cake Ordering Website, game prediction bot, token launch scanner bot, whale wallet tracker, audiobook for girlfriend.
+Flagship Products & Builds:
+- ShopFlow: 100% offline-first React Native mobile e-commerce marketplace (expo-sqlite, 112 items, 5-step checkout, APK available)
+- Fiorio: Luxury travel discovery & unified booking engine mobile app (expo-sqlite, 56 cities, 950 listings, direct APK download)
+- Hacker's Medicare: Self-contained healthcare & telehealth mobile app (expo-sqlite, 26 doctors, live video room, APK available)
+- Stella AI (stellaai.pro): The AI Learning Operating System
+- Fluo (bizfluo.vercel.app): Mobile-first business operating system with AI receptionist, booking, Paystack payments
+- Inkognito (inkognito-sandy.vercel.app): Anonymous confessions, WebRTC stranger chat, Groq Llama 3.1 companion
+- Ikegwuru (ikegwuru.vercel.app): Brand identity & e-commerce rooted in the Kwechiri philosophy
+- Other notable builds: Portal Web3 Game Site, HackerAutoTradeBot (crypto trading), Vybe Whale Alert Bot, OMPH Catholic Church Website, Caritas Catholic Church Website, Signet (signet.xyz), ZK Compression Cost Visualizer, Zugis Cake Ordering, Retail Store System, and multiple verified client businesses (Rhaina Cosmetics, Kitchen Royale, Itus Global Construction, Eaglefresh Properties, Naya's Kitchen, Winny Bakes, NLM Autos). Over 80 GitHub repositories and 30+ completed projects.
 
 Contact: ogekcfrankie@gmail.com | GitHub: github.com/frankdotdev | X: @frankdotdev | WhatsApp: +2348059474901
 
