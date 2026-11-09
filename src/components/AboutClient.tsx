@@ -33,8 +33,8 @@ const JOURNEY = [
   },
   {
     year: "2025+",
-    title: "Stella AI — The Flagship",
-    body: "Actively building Stella AI — The AI Learning Operating System — for launch and scale. Transforming lectures, PDFs, and knowledge sources into intelligent learning systems. Notes, flashcards, exams, summaries, knowledge graphs. The goal is simple: build software that solves real problems at scale.",
+    title: "Flagships & Autonomous Intelligence",
+    body: "Scaling flagship platforms including Stella AI (The AI Learning Operating System) and Inkognito (radical-privacy anonymous social platform), alongside open-source autonomous intelligence engines (LeadRadar, UGC Deal Engine, LeadFinder) and diocesan software infrastructure. Building software that solves real problems at scale.",
   },
 ];
 
@@ -44,7 +44,7 @@ const EXPERIENCE = [
     org: "Hackverse Technologies",
     period: "2024–Present",
     location: "Remote, Enugu, Nigeria",
-    desc: "Founded a software agency delivering custom web/mobile apps, SaaS, automation bots, and Web3 DApps for global clients. Scalable backends with Python, Django, and FastAPI. Responsive frontends with React, Tailwind CSS, and JavaScript.",
+    desc: "Founded a software agency delivering custom web/mobile apps, SaaS, autonomous lead & scraping engines, and Web3 DApps for global clients. Scalable backends with Python, Django, and FastAPI. Responsive frontends with React, Next.js, and TypeScript.",
   },
   {
     role: "Python Developer & Data Analyst",
@@ -58,7 +58,7 @@ const EXPERIENCE = [
     org: "Self-Employed",
     period: "Ongoing",
     location: "Remote",
-    desc: "Built custom Python and MySQL tools for client workflow automation. Created a Telegram bot for crypto trading on Bybit (CCXT, Web3.py) and delivered data analysis solutions for small businesses.",
+    desc: "Built custom Python and MySQL tools for client workflow automation. Created automated Telegram bots for crypto trading on Bybit (CCXT, Web3.py) and delivered data analysis solutions for small businesses.",
   },
   {
     role: "Peer Tutor",
@@ -117,7 +117,7 @@ export default function AboutClient() {
           </h1>
           <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--text-secondary)" }}>
             To some, code is just logic and syntax. To me, it is a universal solvent for human difficulty.
-            I don't just write code — I bridge the gap between where a system is and where it needs to be.
+            I don&apos;t just write code — I bridge the gap between where a system is and where it needs to be.
           </p>
         </Reveal>
       </section>
@@ -156,21 +156,20 @@ export default function AboutClient() {
                 </h2>
                 <div className="flex flex-col gap-4 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   <p>
-                    My journey into engineering didn't start in a classroom — it started in a moment of global
+                    My journey into engineering didn&apos;t start in a classroom — it started in a moment of global
                     stillness in 2020. What began as a curiosity about game engines quickly evolved into a
                     deeper obsession: understanding how complex systems function, fail, and most importantly,
                     how they can be fixed.
                   </p>
                   <p>
-                    I believe that every "bad word" in business — limitation, bottleneck, insecurity,
+                    I believe that every &ldquo;bad word&rdquo; in business — limitation, bottleneck, insecurity,
                     invisibility — is actually a technical challenge waiting for a robust solution. At
-                    Hackverse Technologies, my philosophy is to never build for the sake of "cool stuff."
+                    Hackverse Technologies, my philosophy is to never build for the sake of &ldquo;cool stuff.&rdquo;
                     We build to eliminate friction.
                   </p>
                   <p>
-                    Whether I am architecting a high-speed trading bot in Python, a secure decentralized
-                    protocol in Rust, or an AI system that processes audio into knowledge, the goal is always
-                    Scalability and Purpose.
+                    Whether I am architecting high-intent lead intelligence radars, autonomous outreach engines,
+                    decentralized protocols, or an anonymous privacy network, the goal is always Scalability and Purpose.
                   </p>
                 </div>
               </div>
@@ -183,7 +182,7 @@ export default function AboutClient() {
                   { label: "Also known as", value: "hacker / virus" },
                   { label: "Based in", value: "Enugu, Nigeria" },
                   { label: "Company", value: "Hackverse" },
-                  { label: "Flagship", value: "Stella AI" },
+                  { label: "Flagships", value: "Stella AI · Inkognito" },
                 ].map(({ label, value }) => (
                   <div
                     key={label}
@@ -229,7 +228,7 @@ export default function AboutClient() {
               Journey
             </p>
             <h2 className="font-mono text-3xl md:text-4xl font-light mb-16" style={{ color: "var(--text-primary)" }}>
-              From "What If" to "What's Next"
+              From &ldquo;What If&rdquo; to &ldquo;What&apos;s Next&rdquo;
             </h2>
           </Reveal>
 

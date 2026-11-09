@@ -36,9 +36,13 @@ export default function JsonLd() {
     ],
     knowsAbout: [
       "Software Development",
+      "Open Source Development",
+      "Autonomous Agents",
+      "Lead Intelligence",
       "Artificial Intelligence",
       "Web3 Development",
       "Blockchain",
+      "Solana",
       "Python",
       "React",
       "Next.js",

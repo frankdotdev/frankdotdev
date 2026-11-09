@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ArrowUpRight, GithubLogo, DownloadSimple } from "@phosphor-icons/react";
 import Reveal from "./Reveal";
 
-const CATEGORIES = ["All", "Mobile", "AI/ML", "Web App", "Web3", "Bot", "Automation"];
+const CATEGORIES = ["All", "Open Source", "Mobile", "AI/ML", "Web App", "Automation", "Web3", "Bot"];
 
 interface Project {
   title: string;
@@ -11,6 +11,7 @@ interface Project {
   desc: string;
   category: string;
   featured: boolean;
+  isOpenSource?: boolean;
   status: "Live" | "Private" | "In Progress";
   live: string | null;
   repo: string | null;
@@ -20,7 +21,82 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
-  // --- Mobile Apps (Top Priority - Downloadable) ---
+  // --- Open Source Autonomous Engines & Lead Intelligence ---
+  {
+    title: "LeadRadar",
+    subtitle: "Autonomous Buyer-Intent Radar & Opportunity Listener",
+    desc: "An autonomous, low-overhead listening pipeline that continuously monitors social networks, discussion forums, job boards, and communities for high-intent buyer posts. Concurrently polls 7+ platforms (Hacker News, Reddit, Bluesky, Mastodon, Freelancer.com, Lemmy, Nairaland, Telegram channels, RSS/Atom, X API v2, Apify), runs microsecond regex filtering, scores intent (0–100) via built-in heuristics or parallel Groq LLM reasoning (llama-3.3-70b-versatile), computes cryptographic deduplication text fingerprints, and delivers instant actionable Telegram alerts with single-click workflow triage buttons alongside a zero-framework high-performance web dashboard with AI outreach reply drafting.",
+    category: "Automation",
+    featured: true,
+    isOpenSource: true,
+    status: "Live",
+    live: null,
+    repo: "https://github.com/frankdotdev/LeadRadar",
+    stack: ["Python 3.10+", "FastAPI", "SQLite WAL", "Groq LLM", "Llama 3.3", "Telegram Bot API", "AsyncIO", "Apify"],
+  },
+  {
+    title: "UGC Deal Engine",
+    subtitle: "Autonomous Intent & Compliant Outreach Deal Engine",
+    desc: "An open-source, autonomous deal engine for User Generated Content (UGC) creators, creative strategists, and performance ad agencies. Discovers brands actively seeking creator talent or spending heavily on ads via Google X-Ray (Serper.dev) and TikTok & Meta Ad Library scrapers (Apify), qualifies buyer intent (1-100) and drafts bespoke 3-second hook scripts using Google Gemini 2.5 Flash, enriches decision-maker emails via Hunter.io, and executes a compliant, threaded 3-step outreach sequence via SMTP/IMAP that automatically terminates the instant a prospect replies, opts out, or bounces.",
+    category: "Automation",
+    featured: true,
+    isOpenSource: true,
+    status: "Live",
+    live: null,
+    repo: "https://github.com/frankdotdev/ugc-deal-engine",
+    stack: ["Python 3.10+", "Flask", "SQLite WAL", "APScheduler", "Google Gemini 2.5", "Hunter.io", "Serper.dev", "Apify", "SMTP/IMAP"],
+  },
+  {
+    title: "LeadFinder",
+    subtitle: "High-Accuracy Local Business Lead Generator",
+    desc: "100% free, open-source local lead generation engine for web designers, SEOs, and digital agencies. Queries dual map providers (unmetered OpenStreetMap Overpass API and Google Places API), categorizes businesses into high-converting outreach buckets (No Website, Social Only, Broken Website, Working Website), extracts contact emails with Cloudflare de-obfuscation and subpage deep crawling (/contact, /about), formats phone numbers with one-click WhatsApp chat links, and eliminates false positives with HTTPS-first checks, SSL warning tolerance, and DNS apex/www fallback. Features a clean responsive dashboard and CSV export.",
+    category: "Automation",
+    featured: true,
+    isOpenSource: true,
+    status: "Live",
+    live: null,
+    repo: "https://github.com/frankdotdev/Leadfinder",
+    stack: ["Python", "AsyncIO", "OpenStreetMap", "Google Places API", "Web Scraping", "Lucide SVG", "HTML5/CSS3"],
+  },
+
+  // --- Featured Platforms & Web Apps ---
+  {
+    title: "Inkognito",
+    subtitle: "Speak Freely. Live Anonymously — Radical Privacy Social Platform",
+    desc: "A next-generation anonymous social platform engineered from the ground up around radical privacy, clean design, and psychological freedom. Zero accounts, zero tracking, thread-shifting contextual pseudonyms (unique alias per discussion), ephemeral fading confessions and 24-hour whispers, random instant text & peer-to-peer WebRTC encrypted audio/video chat with encrypted TURN, private AES-256 encrypted DMs, a 6-mode streaming AI Companion with automated crisis safety triage, QR multi-device pairing with 25-character cryptographic recovery codes, and an installable OLED-optimized PWA.",
+    category: "Web App",
+    featured: true,
+    isOpenSource: false,
+    status: "Live",
+    live: "https://inkognito-web.vercel.app",
+    repo: null,
+    stack: ["Next.js", "TypeScript", "WebRTC", "WebSockets", "AES-256", "Paystack", "PWA", "Tailwind CSS"],
+  },
+  {
+    title: "Our Mother of Perpetual Help Catholic Chaplaincy, AE-FUTHA",
+    subtitle: "Official Diocesan Healthcare Chaplaincy Web Platform & Liturgical OS",
+    desc: "Official web platform for Our Mother of Perpetual Help Catholic Chaplaincy, Alex Ekwueme Federal University Teaching Hospital, Abakaliki (AE-FUTHA), Catholic Diocese of Abakaliki, Ebonyi State, Nigeria. Built as a TypeScript monorepo with Next.js 15 (App Router) and PostgreSQL / Supabase. Features automatic liturgical calendar & daily readings sync (romcal, Universalis feed, Evangelizo, USCCB), Mass timetable with exceptions, online Mass intention booking with automatic stipend calculation & WhatsApp receipt verification, Vatican News video widget & papal updates, 10-category Catholic doctrine library with 'Ask a Padre' AI safety triage, role-based admin CMS, multilingual UI (English, Igbo, Hausa, Yoruba, Latin), and offline PWA.",
+    category: "Web App",
+    featured: true,
+    isOpenSource: true,
+    status: "Live",
+    live: "https://omphchapaefutha.vercel.app/",
+    repo: "https://github.com/frankdotdev",
+    stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Supabase", "romcal", "PWA", "Tailwind CSS", "Vatican News"],
+  },
+  {
+    title: "Stella AI",
+    subtitle: "The AI Learning Operating System",
+    desc: "AI-powered learning operating system built first for Nigeria, designed for the world. Transforms lectures, textbooks, and notes into intelligent study systems — auto-generated notes, summaries, flashcards, exams, podcast dialogues, and conversations with 20+ historical thinkers in 8 learning modes with knowledge cards and multi-format conversions.",
+    category: "AI/ML",
+    featured: true,
+    status: "Live",
+    live: "https://stellaai.pro",
+    repo: null,
+    stack: ["React", "Next.js", "FastAPI", "Django REST", "PostgreSQL", "Celery", "Redis"],
+  },
+
+  // --- Mobile Apps (Downloadable APKs) ---
   {
     title: "ShopFlow",
     subtitle: "Offline-First Mobile E-Commerce Marketplace",
@@ -61,18 +137,7 @@ const PROJECTS: Project[] = [
     stack: ["React Native", "Expo SDK 57", "Expo Router 4", "expo-sqlite", "Zustand", "TypeScript"],
   },
 
-  // --- Flagship Platforms ---
-  {
-    title: "Stella AI",
-    subtitle: "The AI Learning Operating System",
-    desc: "AI-powered learning operating system built first for Nigeria, designed for the world. Transforms lectures, textbooks, and notes into intelligent study systems — auto-generated notes, summaries, flashcards, exams, podcast dialogues, and conversations with 20+ historical thinkers in 8 learning modes with knowledge cards and multi-format conversions.",
-    category: "AI/ML",
-    featured: true,
-    status: "Live",
-    live: "https://stellaai.pro",
-    repo: null,
-    stack: ["React", "Next.js", "FastAPI", "Django REST", "PostgreSQL", "Celery", "Redis"],
-  },
+  // --- Other Flagship Platforms ---
   {
     title: "Fluo",
     subtitle: "Mobile-First Business Operating System",
@@ -83,17 +148,6 @@ const PROJECTS: Project[] = [
     live: "https://bizfluo.vercel.app",
     repo: null,
     stack: ["Next.js", "TypeScript", "Claude 3.5 AI", "Paystack", "Flutterwave", "PostgreSQL", "Tailwind CSS"],
-  },
-  {
-    title: "Inkognito",
-    subtitle: "Speak Without a Face — Anonymous Platform",
-    desc: "An anonymous three-pillar social platform: Confession Feed with snippet previews and reactions, Omegle-style Stranger Chat with peer-to-peer WebRTC video and Convex real-time signaling, and Groq-powered AI Companion (Llama 3.1-8B-Instant) with session-only streaming. Zero accounts required, zero traces left.",
-    category: "Web App",
-    featured: true,
-    status: "Live",
-    live: "https://inkognito-sandy.vercel.app/",
-    repo: null,
-    stack: ["Next.js 14", "Convex", "Groq AI (Llama 3.1)", "WebRTC", "AWS Rekognition", "Cloudflare R2"],
   },
   {
     title: "Ikegwuru",
@@ -186,11 +240,11 @@ const PROJECTS: Project[] = [
     stack: ["React", "Tailwind CSS", "Netlify"],
   },
 
-  // --- Web3, Bot & Full-Stack Projects ---
+  // --- Web3, Bot & Automation Projects ---
   {
     title: "Portal Web3 Game Site",
     subtitle: "Play-to-earn game platform",
-    desc: "A Web3 game site where users can get rewarded for playing and the top users are displayed on a real-time leaderboard. Worked on the backend architecture and API.",
+    desc: "A Web3 game site where users can get rewarded for playing and the top users are displayed on a real-time leaderboard. Worked on the backend architecture and API with Solana wallet adapter integration.",
     category: "Web3",
     featured: false,
     status: "Live",
@@ -208,17 +262,6 @@ const PROJECTS: Project[] = [
     live: null,
     repo: "#",
     stack: ["Python", "CCXT", "Web3.py", "Telegram Bot API"],
-  },
-  {
-    title: "OMPH Catholic Chaplaincy",
-    subtitle: "Full-featured Church Web App",
-    desc: "A full-featured web application for Our Mother of Perpetual Help Chaplaincy. Features Mass Intentions, Prayer Wall, Events Calendar, Marketplace, Admin Dashboard, and PWA support.",
-    category: "Web App",
-    featured: false,
-    status: "Live",
-    live: "#",
-    repo: "#",
-    stack: ["Next.js", "Supabase", "Tailwind CSS"],
   },
   {
     title: "Caritas Catholic Chaplaincy",
@@ -322,6 +365,8 @@ export default function BuildsClient() {
   const filtered =
     activeFilter === "All"
       ? PROJECTS
+      : activeFilter === "Open Source"
+      ? PROJECTS.filter((p) => p.isOpenSource)
       : PROJECTS.filter((p) => p.category === activeFilter);
 
   const featured = filtered.filter((p) => p.featured);
@@ -342,15 +387,16 @@ export default function BuildsClient() {
             Builds
           </h1>
           <p className="text-base leading-relaxed max-w-2xl mb-4" style={{ color: "var(--text-secondary)" }}>
-            A curated collection of production systems, offline-first mobile apps, AI platforms, Web3 protocols, and client solutions. Real software engineered for real humans — with direct APK downloads available for mobile builds.
+            A curated collection of open-source autonomous engines, production systems, offline-first mobile apps, AI platforms, and client solutions. Real software engineered for real humans — with direct APK downloads and open GitHub code.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap gap-6 mt-8">
             {[
-              { v: "30+", l: "Projects Built" },
+              { v: "35+", l: "Projects Built" },
               { v: "80+", l: "GitHub Repos" },
-              { v: "5K+", l: "Dev Hours" },
+              { v: "4+", l: "Open Source Engines" },
+              { v: "10K+", l: "Dev Hours" },
               { v: "100%", l: "Client Satisfaction" },
             ].map(({ v, l }) => (
               <div key={l}>
@@ -364,30 +410,59 @@ export default function BuildsClient() {
             ))}
           </div>
 
-          {/* Mobile Apps Highlight Banner */}
-          <div
-            className="mt-8 p-4 border flex items-center justify-between flex-wrap gap-3 font-mono text-xs"
-            style={{
-              borderColor: "var(--border)",
-              backgroundColor: "var(--bg-secondary)",
-            }}
-          >
-            <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#4ade80" }} />
-              <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
-                Mobile Apps Available:
-              </span>
-              <span style={{ color: "var(--text-muted)" }}>
-                ShopFlow, Fiorio, and Hacker&apos;s Medicare are ready for standalone Android APK download.
-              </span>
-            </div>
-            <button
-              onClick={() => setActiveFilter("Mobile")}
-              className="hover-line text-xs font-medium cursor-pointer"
-              style={{ color: "var(--text-primary)" }}
+          {/* Highlights Banner */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            {/* Open Source Banner */}
+            <div
+              className="p-4 border flex items-center justify-between flex-wrap gap-3 font-mono text-xs"
+              style={{
+                borderColor: "var(--border)",
+                backgroundColor: "var(--bg-secondary)",
+              }}
             >
-              Filter Mobile Apps →
-            </button>
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#60a5fa" }} />
+                <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
+                  Open Source Suite:
+                </span>
+                <span style={{ color: "var(--text-muted)" }}>
+                  LeadRadar, UGC Deal Engine, LeadFinder, and OMPH Chaplaincy.
+                </span>
+              </div>
+              <button
+                onClick={() => setActiveFilter("Open Source")}
+                className="hover-line text-xs font-medium cursor-pointer"
+                style={{ color: "var(--text-primary)" }}
+              >
+                Filter Open Source →
+              </button>
+            </div>
+
+            {/* Mobile Apps Highlight Banner */}
+            <div
+              className="p-4 border flex items-center justify-between flex-wrap gap-3 font-mono text-xs"
+              style={{
+                borderColor: "var(--border)",
+                backgroundColor: "var(--bg-secondary)",
+              }}
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#4ade80" }} />
+                <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
+                  Offline-First Mobile:
+                </span>
+                <span style={{ color: "var(--text-muted)" }}>
+                  ShopFlow, Fiorio, and Hacker&apos;s Medicare standalone APKs.
+                </span>
+              </div>
+              <button
+                onClick={() => setActiveFilter("Mobile")}
+                className="hover-line text-xs font-medium cursor-pointer"
+                style={{ color: "var(--text-primary)" }}
+              >
+                Filter Mobile Apps →
+              </button>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -434,10 +509,22 @@ export default function BuildsClient() {
                   <div>
                     <div className="flex items-start justify-between mb-3 gap-2">
                       <div>
-                        <div className="flex items-center gap-2 mb-1">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <h2 className="font-mono text-lg font-medium" style={{ color: "var(--text-primary)" }}>
                             {p.title}
                           </h2>
+                          {p.isOpenSource && (
+                            <span
+                              className="font-mono text-[10px] px-1.5 py-0.5 border"
+                              style={{
+                                borderColor: "#60a5fa",
+                                color: "#60a5fa",
+                                backgroundColor: "rgba(96, 165, 250, 0.08)",
+                              }}
+                            >
+                              Open Source
+                            </span>
+                          )}
                           {p.category === "Mobile" && (
                             <span
                               className="font-mono text-[10px] px-1.5 py-0.5 border"
@@ -511,7 +598,7 @@ export default function BuildsClient() {
                         className="font-mono text-xs flex items-center gap-1 hover-line"
                         style={{ color: "var(--text-muted)" }}
                       >
-                        <GithubLogo size={13} /> Source
+                        <GithubLogo size={13} /> {p.isOpenSource ? "GitHub Repo" : "Source"}
                       </a>
                     )}
                   </div>
@@ -542,7 +629,7 @@ export default function BuildsClient() {
                   }
                 >
                   <div className="md:col-span-1">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <h3 className="font-mono text-sm font-medium" style={{ color: "var(--text-primary)" }}>
                         {p.title}
                       </h3>
@@ -550,6 +637,18 @@ export default function BuildsClient() {
                         className="w-1.5 h-1.5 rounded-full shrink-0"
                         style={{ backgroundColor: STATUS_COLORS[p.status] || "#888" }}
                       />
+                      {p.isOpenSource && (
+                        <span
+                          className="font-mono text-[10px] px-1.5 py-0.5 border"
+                          style={{
+                            borderColor: "#60a5fa",
+                            color: "#60a5fa",
+                            backgroundColor: "rgba(96, 165, 250, 0.08)",
+                          }}
+                        >
+                          Open Source
+                        </span>
+                      )}
                     </div>
                     <p className="font-mono text-xs mb-3" style={{ color: "var(--text-muted)" }}>
                       {p.subtitle}
@@ -603,7 +702,7 @@ export default function BuildsClient() {
                             className="font-mono text-xs flex items-center gap-1 hover-line"
                             style={{ color: "var(--text-muted)" }}
                           >
-                            <GithubLogo size={12} /> Code
+                            <GithubLogo size={12} /> {p.isOpenSource ? "GitHub Repo" : "Code"}
                           </a>
                         )}
                       </div>

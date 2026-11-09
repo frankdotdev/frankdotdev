@@ -11,6 +11,9 @@ import {
   Lightning,
   ArrowUpRight,
   Terminal,
+  GithubLogo,
+  ShieldCheck,
+  EyeSlash,
 } from "@phosphor-icons/react";
 import MarqueeRow from "./MarqueeRow";
 import Reveal from "./Reveal";
@@ -55,16 +58,16 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: "30+", label: "Projects Built" },
+  { value: "35+", label: "Projects Built" },
   { value: "80+", label: "GitHub Repos" },
-  { value: "10K+", label: "Dev Hours" },
+  { value: "4+", label: "Open Source Engines" },
   { value: "2020", label: "Started Coding" },
 ];
 
 export default function HomeClient() {
   const [typed, setTyped] = useState("");
-  const [phase, setPhase] = useState(0);
-  const phrases = ["Software Developer.", "AI Integrator.", "Web3 Builder.", "Problem Solver."];
+  const [, setPhase] = useState(0);
+  const phrases = ["Software Developer.", "AI Integrator.", "Open Source Builder.", "Problem Solver."];
   const phraseIdx = useRef(0);
   const charIdx = useRef(0);
   const deleting = useRef(false);
@@ -110,7 +113,7 @@ export default function HomeClient() {
                 className="w-1.5 h-1.5 rounded-full"
                 style={{ backgroundColor: "#4ade80" }}
               />
-              Available for projects
+              Available for projects & open source collaboration
             </div>
 
             {/* Name */}
@@ -138,7 +141,7 @@ export default function HomeClient() {
             <p className="text-base leading-relaxed mb-10 max-w-lg" style={{ color: "var(--text-secondary)" }}>
               I believe software is the universal solvent for human difficulty. Founder of{" "}
               <span style={{ color: "var(--text-primary)" }}>Hackverse Software Solutions</span>,
-              building intelligent, scalable systems across Web2, Web3, and AI.
+              building intelligent autonomous systems, open-source lead engines, and radical privacy networks.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -221,15 +224,113 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Stella AI Feature */}
-      <section className="py-24 px-6 md:px-10 max-w-7xl mx-auto">
+      {/* Inkognito Featured Showcase */}
+      <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
         <Reveal>
           <div
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 border"
             style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-secondary)" }}
           >
             <div className="flex flex-col justify-center">
-              <div className="tag w-fit mb-6">Flagship Product</div>
+              <div className="flex items-center gap-2 mb-6">
+                <span className="tag flex items-center gap-1.5">
+                  <EyeSlash size={13} /> Anonymous Social Platform
+                </span>
+                <span
+                  className="font-mono text-[10px] px-2 py-0.5 border"
+                  style={{
+                    borderColor: "#a78bfa",
+                    color: "#a78bfa",
+                    backgroundColor: "rgba(167, 139, 250, 0.08)",
+                  }}
+                >
+                  Live Web App
+                </span>
+              </div>
+              <h2 className="font-mono text-3xl md:text-4xl font-light mb-3" style={{ color: "var(--text-primary)" }}>
+                Inkognito
+              </h2>
+              <blockquote className="font-mono text-sm italic mb-4" style={{ color: "var(--text-muted)" }}>
+                &ldquo;Say what you can&apos;t say anywhere else.&rdquo;
+              </blockquote>
+              <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
+                Modern social media turned every thought into personal branding. Inkognito is the antidote:
+                an anonymous platform engineered from the ground up around radical privacy, clean design, and psychological freedom.
+                No phone numbers, no emails, no tracking, thread-shifting contextual pseudonyms (your identity changes per confession),
+                ephemeral fading posts &amp; 24-hour whispers, random instant WebRTC video/text chat with encrypted TURN, private AES-256 DMs,
+                and a 6-mode streaming AI companion with proactive crisis safety triage.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["Next.js", "WebRTC", "WebSockets", "AES-256", "Paystack", "PWA", "OLED Dark"].map((t) => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="https://inkognito-web.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-btn w-fit"
+                >
+                  Enter Inkognito
+                  <ArrowUpRight size={14} />
+                </a>
+                <Link href="/builds" className="cta-btn-ghost text-xs">
+                  View Full Architecture
+                </Link>
+              </div>
+            </div>
+
+            {/* Terminal / Live Preview Mockup */}
+            <div
+              className="font-mono text-xs p-6 border flex flex-col justify-between"
+              style={{
+                backgroundColor: "var(--bg-tertiary)",
+                borderColor: "var(--border)",
+                lineHeight: "1.8",
+              }}
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#ef4444" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#f59e0b" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#22c55e" }} />
+                  <span className="ml-3" style={{ color: "var(--text-faint)" }}>inkognito.app — private_by_design</span>
+                </div>
+                <div style={{ color: "var(--text-muted)" }}>
+                  <div style={{ color: "#a78bfa" }}>// Contextual Anonymity Protocol</div>
+                  <div>Device Identity: <span style={{ color: "#4ade80" }}>[CRYPTOGRAPHIC_TOKEN_LOCAL]</span></div>
+                  <div>Phone / Email: <span style={{ color: "#ef4444" }}>NONE (Zero Trace)</span></div>
+                  <div>Current Thread: <span style={{ color: "var(--text-secondary)" }}>The Void / Late Night</span></div>
+                  <div>Assigned Alias: <span style={{ color: "#60a5fa" }}>Silent Drifter #42</span></div>
+                  <div>Pseudonym Scope: <span style={{ color: "var(--text-faint)" }}>Thread-isolated (auto-shifts)</span></div>
+                  <div className="mt-3 border-t pt-3" style={{ borderColor: "var(--border-subtle)" }}>
+                    <div style={{ color: "var(--text-secondary)" }}>--- Active Privacy Features</div>
+                    <div>• Fading Confessions &amp; 24h Whispers (auto-purge)</div>
+                    <div>• Random WebRTC Video/Text Chat (encrypted TURN)</div>
+                    <div>• AES-256 Server-Encrypted Direct Messages</div>
+                    <div>• 6-Mode Streaming AI Companion + Crisis Safety</div>
+                    <div>• 25-Char Cryptographic Recovery Code</div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 pt-3 border-t font-mono text-[11px]" style={{ borderColor: "var(--border-subtle)", color: "#4ade80" }}>
+                ✓ Zero accounts required. Zero traces left.
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Stella AI Feature */}
+      <section className="py-12 px-6 md:px-10 max-w-7xl mx-auto">
+        <Reveal>
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12 border"
+            style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-secondary)" }}
+          >
+            <div className="flex flex-col justify-center">
+              <div className="tag w-fit mb-6">Flagship AI Product</div>
               <h2 className="font-mono text-3xl md:text-4xl font-light mb-4" style={{ color: "var(--text-primary)" }}>
                 Stella AI
               </h2>
@@ -290,6 +391,129 @@ export default function HomeClient() {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* Open Source Powerhouses Spotlight */}
+      <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 font-mono text-xs mb-3 px-2.5 py-1 border" style={{ borderColor: "#60a5fa", color: "#60a5fa" }}>
+                <ShieldCheck size={14} /> Open Source Suite
+              </div>
+              <h2 className="font-mono text-3xl md:text-4xl font-light" style={{ color: "var(--text-primary)" }}>
+                Autonomous Engines &amp; Lead Radar
+              </h2>
+            </div>
+            <Link
+              href="/builds"
+              className="font-mono text-xs flex items-center gap-2 hover-line"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Filter All Open Source <ArrowUpRight size={12} />
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "var(--border-subtle)" }}>
+          {[
+            {
+              title: "LeadRadar",
+              tag: "Intent Radar",
+              desc: "Autonomous buyer-intent radar polling 7+ networks with microsecond regex filtering, Groq LLM (Llama 3.3 70B) reasoning, and instant Telegram alert buttons with workflow triage.",
+              repo: "https://github.com/frankdotdev/LeadRadar",
+              live: null,
+              stack: ["Python", "FastAPI", "SQLite WAL", "Groq LLM", "Telegram"],
+            },
+            {
+              title: "UGC Deal Engine",
+              tag: "Deal Engine",
+              desc: "Autonomous discovery & outreach engine for UGC creators and agencies. Gemini 2.5 scoring, Hunter.io enrichment, and compliant 3-step outreach with auto-suppression.",
+              repo: "https://github.com/frankdotdev/ugc-deal-engine",
+              live: null,
+              stack: ["Python", "Flask", "Gemini 2.5", "Hunter.io", "SMTP/IMAP"],
+            },
+            {
+              title: "LeadFinder",
+              tag: "Lead Intelligence",
+              desc: "Local business lead generator with Overpass API & Google Places. Scrapes unmetered contacts, detects broken sites, and deep-crawls emails with zero false positives.",
+              repo: "https://github.com/frankdotdev/Leadfinder",
+              live: null,
+              stack: ["Python", "OpenStreetMap", "Google Places", "AsyncIO"],
+            },
+            {
+              title: "OMPH Chaplaincy",
+              tag: "Church & Liturgy OS",
+              desc: "Diocesan healthcare chaplaincy platform (AE-FUTHA). Automatic daily lectionary sync (romcal, Universalis, USCCB), online Mass intentions, Vatican News feed, and PWA.",
+              repo: "https://github.com/frankdotdev",
+              live: "https://omphchapaefutha.vercel.app/",
+              stack: ["Next.js 15", "TypeScript", "PostgreSQL", "Supabase", "PWA"],
+            },
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 60}>
+              <div
+                className="p-8 group h-full flex flex-col justify-between"
+                style={{ backgroundColor: "var(--bg)" }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg-secondary)")
+                }
+                onMouseLeave={(e) =>
+                  ((e.currentTarget as HTMLElement).style.backgroundColor = "var(--bg)")
+                }
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="tag text-[10px]">{item.tag}</span>
+                    <span
+                      className="font-mono text-[10px] px-1.5 py-0.5 border"
+                      style={{
+                        borderColor: "#60a5fa",
+                        color: "#60a5fa",
+                        backgroundColor: "rgba(96, 165, 250, 0.08)",
+                      }}
+                    >
+                      MIT / Open
+                    </span>
+                  </div>
+                  <h3 className="font-mono text-base font-medium mb-2" style={{ color: "var(--text-primary)" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
+                    {item.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-6">
+                    {item.stack.map((s) => (
+                      <span key={s} className="tag text-[10px] px-1.5 py-0.5">{s}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2 border-t" style={{ borderColor: "var(--border-subtle)" }}>
+                  <a
+                    href={item.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs flex items-center gap-1.5 hover-line"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    <GithubLogo size={13} /> GitHub
+                  </a>
+                  {item.live && (
+                    <a
+                      href={item.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs flex items-center gap-1 hover-line"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      Live <ArrowUpRight size={11} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* Services Overview */}
@@ -359,7 +583,7 @@ export default function HomeClient() {
               className="font-mono text-2xl md:text-3xl lg:text-4xl font-light leading-snug mb-8"
               style={{ color: "var(--text-primary)" }}
             >
-              "Software is the most powerful tool ever created for human leverage. I don't just write code — I bridge the gap between where a system is and where it needs to be."
+              &ldquo;Software is the most powerful tool ever created for human leverage. I don&apos;t just write code — I bridge the gap between where a system is and where it needs to be.&rdquo;
             </blockquote>
             <Link
               href="/philosophy"
@@ -378,14 +602,14 @@ export default function HomeClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="font-mono text-xs tracking-widest uppercase mb-4" style={{ color: "var(--text-faint)" }}>
-                Let's Build
+                Let&apos;s Build
               </p>
               <h2 className="font-mono text-3xl md:text-4xl font-light mb-6" style={{ color: "var(--text-primary)" }}>
                 Have a problem worth solving?
               </h2>
               <p className="text-sm leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
-                Whether it's a SaaS product, web app, automation, or anything that solves a real problem — I'm in.
-                Let's eliminate friction together.
+                Whether it&apos;s an open source engine, SaaS product, web app, automation, or anything that solves a real problem — I&apos;m in.
+                Let&apos;s eliminate friction together.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="cta-btn">
@@ -415,13 +639,13 @@ export default function HomeClient() {
                 <span style={{ color: "#4ade80" }}>→</span> Full-Time Positions
               </div>
               <div style={{ color: "var(--text-secondary)" }}>
+                <span style={{ color: "#4ade80" }}>→</span> Open Source Collaboration
+              </div>
+              <div style={{ color: "var(--text-secondary)" }}>
                 <span style={{ color: "#4ade80" }}>→</span> SaaS Partnerships
               </div>
               <div style={{ color: "var(--text-secondary)" }}>
                 <span style={{ color: "#4ade80" }}>→</span> Technical Consulting
-              </div>
-              <div style={{ color: "var(--text-secondary)" }}>
-                <span style={{ color: "#4ade80" }}>→</span> Open Source Collaboration
               </div>
               <div className="mt-4 pt-4 border-t" style={{ borderColor: "var(--border-subtle)", color: "var(--text-faint)" }}>
                 Timezone: WAT (UTC+1) · Enugu, Nigeria

@@ -9,18 +9,23 @@ About Frank:
 - Self-taught, studied at Caritas University, Enugu, Nigeria (BSc Computer Science, 2022-2026)
 - Philosophy: "Software as a Solution" — software is not just code, it's the universal tool for solving problems
 - Ex-seminarian, proud Catholic, Altar Knight, WWE fan, interested in psychology, history, philosophy
+- Uses Solana wallet adapter for Web3 wallet integrations (never Privy).
 
-Skills: Python, JavaScript/TypeScript, Rust, Solidity, Django, FastAPI, React, Next.js, Tailwind CSS, PostgreSQL, MySQL, Redis, Celery, Docker, Web3.js, Web3.py, LangChain, OpenAI API, React Native
+Skills: Python, JavaScript/TypeScript, Rust, Solidity, Django, FastAPI, React, Next.js, Tailwind CSS, PostgreSQL, MySQL, Redis, Celery, Docker, Web3.js, Web3.py, LangChain, OpenAI API, React Native, Solana Wallet Adapter
 
 Flagship Products & Builds:
+- Inkognito (inkognito-web.vercel.app): Radical privacy anonymous social platform ("Say what you can't say anywhere else"). Zero accounts/tracking, thread-shifting contextual pseudonyms, fading confessions & 24h whispers, random WebRTC video/text chat with encrypted TURN, private AES-256 DMs, 6-mode streaming AI companion with crisis safety triage, and installable OLED PWA.
+- LeadRadar (github.com/frankdotdev/LeadRadar): Autonomous buyer-intent radar & opportunity listener. Monitors 7+ platforms (Hacker News, Reddit, Bluesky, Mastodon, Freelancer.com, Lemmy, Nairaland, Telegram, RSS, X, Apify) with microsecond regex filtering, Groq LLM (Llama 3.3 70B) reasoning, and actionable Telegram alerts with single-click triage.
+- UGC Deal Engine (github.com/frankdotdev/ugc-deal-engine): Autonomous buyer-intent & compliant outreach engine for UGC creators & agencies with Google Gemini 2.5 Flash scoring, Hunter.io enrichment, and 3-step outreach with automated reply/unsubscribe/bounce termination.
+- LeadFinder (github.com/frankdotdev/Leadfinder): High-accuracy local business lead generator with OpenStreetMap Overpass API, Google Places API, Cloudflare email de-obfuscation, deep subpage crawling, and zero false positives.
+- Our Mother of Perpetual Help Catholic Chaplaincy, AE-FUTHA (omphchapaefutha.vercel.app): Official diocesan healthcare chaplaincy platform & liturgical OS with automatic daily readings sync (romcal, Universalis, USCCB), online Mass intentions with WhatsApp receipt verification, Vatican News feed, and Catholic Doctrine library with "Ask a Padre" AI safety triage.
+- Stella AI (stellaai.pro): The AI Learning Operating System transforming lectures and documents into study systems.
 - ShopFlow: 100% offline-first React Native mobile e-commerce marketplace (expo-sqlite, 112 items, 5-step checkout, APK available)
 - Fiorio: Luxury travel discovery & unified booking engine mobile app (expo-sqlite, 56 cities, 950 listings, direct APK download)
 - Hacker's Medicare: Self-contained healthcare & telehealth mobile app (expo-sqlite, 26 doctors, live video room, APK available)
-- Stella AI (stellaai.pro): The AI Learning Operating System
 - Fluo (bizfluo.vercel.app): Mobile-first business operating system with AI receptionist, booking, Paystack payments
-- Inkognito (inkognito-sandy.vercel.app): Anonymous confessions, WebRTC stranger chat, Groq Llama 3.1 companion
 - Ikegwuru (ikegwuru.vercel.app): Brand identity & e-commerce rooted in the Kwechiri philosophy
-- Other notable builds: Portal Web3 Game Site, HackerAutoTradeBot (crypto trading), Vybe Whale Alert Bot, OMPH Catholic Church Website, Caritas Catholic Church Website, Signet (signet.xyz), ZK Compression Cost Visualizer, Zugis Cake Ordering, Retail Store System, and multiple verified client businesses (Rhaina Cosmetics, Kitchen Royale, Itus Global Construction, Eaglefresh Properties, Naya's Kitchen, Winny Bakes, NLM Autos). Over 80 GitHub repositories and 30+ completed projects.
+- Other notable builds: Portal Web3 Game Site, HackerAutoTradeBot (crypto trading), Vybe Whale Alert Bot, Caritas Catholic Church Website, Signet (signet.xyz), ZK Compression Cost Visualizer, Zugis Cake Ordering, Retail Store System, and multiple verified client businesses. Over 80 GitHub repositories and 35+ completed projects.
 
 Contact: ogekcfrankie@gmail.com | GitHub: github.com/frankdotdev | X: @frankdotdev | WhatsApp: +2348059474901
 
