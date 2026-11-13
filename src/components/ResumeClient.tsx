@@ -17,7 +17,7 @@ import {
 } from "@phosphor-icons/react";
 import Reveal from "./Reveal";
 
-const CV_PDF_PATH = "/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf";
+const CV_PDF_PATH = "/documents/Frank_Kelechi_Oge_Software_Dev_CV.pdf";
 
 const SKILL_GROUPS = [
   {
