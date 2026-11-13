@@ -244,7 +244,7 @@ export default function ResumeClient() {
               <div className="flex items-center gap-2 mb-1">
                 <FilePdf size={18} weight="fill" style={{ color: "#ef4444" }} />
                 <h1 className="font-mono text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
-                  Frank_Kelechi_Oge_Software_Dev_CV.pdf
+                  Frank Oge Resume
                 </h1>
               </div>
               <p className="text-xs" style={{ color: "var(--text-muted)" }}>
