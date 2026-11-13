@@ -244,7 +244,7 @@ export default function ResumeClient() {
               <div className="flex items-center gap-2 mb-1">
                 <FilePdf size={18} weight="fill" style={{ color: "#ef4444" }} />
                 <h1 className="font-mono text-sm font-semibold" style={{ color: "var(--text-primary)" }}>
-                  Frank_Kelechi_Oge_Software_Engineer_CV.pdf
+                  Frank_Kelechi_Oge_Software_Dev_CV.pdf
                 </h1>
               </div>
               <p className="text-xs" style={{ color: "var(--text-muted)" }}>
@@ -510,7 +510,7 @@ export default function ResumeClient() {
           </div>
           <a
             href={CV_PDF_PATH}
-            download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+            download="Frank_Kelechi_Oge_Software_Dev_CV.pdf"
             className="cta-btn text-xs px-3 py-1.5"
           >
             <DownloadSimple size={13} weight="bold" />
