@@ -255,7 +255,7 @@ export default function ResumeClient() {
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href={CV_PDF_PATH}
-                download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                download="Frank_Kelechi_Oge_Software_Dev_CV.pdf"
                 className="cta-btn text-xs"
               >
                 <DownloadSimple size={14} weight="bold" />
