@@ -100,8 +100,20 @@ const TECH_ROWS = [
   ["TanStack", "Chart.js", "Celery", "Nginx", "Linux", "Telegram Bot API", "CCXT", "REST API"],
 ];
 
-// Gallery: frank1.png through frank20.png (user will populate /public/images/)
-const GALLERY_IMAGES = Array.from({ length: 20 }, (_, i) => `/images/frank${i + 1}.png`);
+// Verified portraits in /public/images/
+const FRANK_PORTRAITS = [
+  { src: "/images/frank1.png", alt: "Frank Kelechi Oge — Software Engineer" },
+  { src: "/images/frank2.png", alt: "Frank Kelechi Oge — Coding & Systems" },
+  { src: "/images/frank3.jpg", alt: "Frank Kelechi Oge — Founder Hackverse" },
+  { src: "/images/frank4.jpg", alt: "Frank Kelechi Oge — Engineering" },
+  { src: "/images/frank5.jpg", alt: "Frank Kelechi Oge — Problem Solver" },
+  { src: "/images/frank6.jpg", alt: "Frank Kelechi Oge — Systems Architect" },
+  { src: "/images/frank7.jpeg", alt: "Frank Kelechi Oge — Builder" },
+  { src: "/images/frank8.jpg", alt: "Frank Kelechi Oge — Tech & Philosophy" },
+  { src: "/images/frank9.jpeg", alt: "Frank Kelechi Oge — Hackverse" },
+  { src: "/images/frank10.jpeg", alt: "Frank Kelechi Oge — Autonomous Systems" },
+  { src: "/images/frank11.jpg", alt: "Frank Kelechi Oge — Full-Stack Developer" },
+];
 
 export default function AboutClient() {
   return (
@@ -109,16 +121,33 @@ export default function AboutClient() {
       {/* Header */}
       <section className="pt-32 pb-16 px-6 md:px-10 max-w-7xl mx-auto">
         <Reveal>
-          <p className="font-mono text-xs tracking-widest uppercase mb-4" style={{ color: "var(--text-faint)" }}>
-            About Me
-          </p>
-          <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6" style={{ color: "var(--text-primary)" }}>
-            Frank Kelechi Oge
-          </h1>
-          <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--text-secondary)" }}>
-            To some, code is just logic and syntax. To me, it is a universal solvent for human difficulty.
-            I don&apos;t just write code — I bridge the gap between where a system is and where it needs to be.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <p className="font-mono text-xs tracking-widest uppercase mb-4" style={{ color: "var(--text-faint)" }}>
+                About Me
+              </p>
+              <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6" style={{ color: "var(--text-primary)" }}>
+                Frank Kelechi Oge
+              </h1>
+              <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--text-secondary)" }}>
+                To some, code is just logic and syntax. To me, it is a universal solvent for human difficulty.
+                I don&apos;t just write code — I bridge the gap between where a system is and where it needs to be.
+              </p>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <Link href="/resume" className="cta-btn text-xs inline-flex items-center gap-1.5">
+                Resume &amp; CV <ArrowUpRight size={13} />
+              </Link>
+              <a
+                href="/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                className="cta-btn-ghost text-xs inline-flex items-center gap-1.5"
+                title="Download CV (PDF)"
+              >
+                Download PDF
+              </a>
+            </div>
+          </div>
         </Reveal>
       </section>
 
@@ -156,14 +185,14 @@ export default function AboutClient() {
                 </h2>
                 <div className="flex flex-col gap-4 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   <p>
-                    My journey into engineering didn&apos;t start in a classroom — it started in a moment of global
+                    My journey into engineering didn&apos;t start in a classroom, it started in a moment of global
                     stillness in 2020. What began as a curiosity about game engines quickly evolved into a
                     deeper obsession: understanding how complex systems function, fail, and most importantly,
                     how they can be fixed.
                   </p>
                   <p>
                     I believe that every &ldquo;bad word&rdquo; in business — limitation, bottleneck, insecurity,
-                    invisibility — is actually a technical challenge waiting for a robust solution. At
+                    invisibility, is actually a technical challenge waiting for a robust solution. At
                     Hackverse Technologies, my philosophy is to never build for the sake of &ldquo;cool stuff.&rdquo;
                     We build to eliminate friction.
                   </p>
@@ -199,10 +228,21 @@ export default function AboutClient() {
                 ))}
               </div>
 
-              <div className="flex gap-4 mt-2">
+              <div className="flex flex-wrap gap-3 mt-2">
                 <Link href="/builds" className="cta-btn text-xs">
                   View Builds <ArrowRight size={13} />
                 </Link>
+                <Link href="/resume" className="cta-btn-ghost text-xs">
+                  Resume / CV <ArrowUpRight size={13} />
+                </Link>
+                <a
+                  href="/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                  download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                  className="cta-btn-ghost text-xs inline-flex items-center gap-1.5"
+                  title="Download Frank Kelechi Oge CV"
+                >
+                  Download CV <ArrowUpRight size={13} />
+                </a>
                 <a
                   href="https://github.com/frankdotdev"
                   target="_blank"
@@ -399,21 +439,19 @@ export default function AboutClient() {
         </div>
 
         {/* Row 1 — scroll left */}
-        <div className="marquee-container mb-4">
-          <div className="marquee-inner left flex gap-4" style={{ animationDuration: "40s" }}>
-            {[...GALLERY_IMAGES.slice(0, 10), ...GALLERY_IMAGES.slice(0, 10)].map((src, i) => (
+        <div className="marquee-container mb-6">
+          <div className="marquee-inner left flex gap-6" style={{ animationDuration: "35s" }}>
+            {[...FRANK_PORTRAITS, ...FRANK_PORTRAITS].map((item, i) => (
               <div
-                key={i}
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 border"
+                key={`row1-${i}`}
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 border relative group shadow-sm"
                 style={{ borderColor: "var(--border)" }}
               >
                 <img
-                  src={src}
-                  alt={`Frank ${i + 1}`}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/images/frank1.png";
-                  }}
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -422,20 +460,18 @@ export default function AboutClient() {
 
         {/* Row 2 — scroll right */}
         <div className="marquee-container">
-          <div className="marquee-inner right flex gap-4" style={{ animationDuration: "45s" }}>
-            {[...GALLERY_IMAGES.slice(10), ...GALLERY_IMAGES.slice(10)].map((src, i) => (
+          <div className="marquee-inner right flex gap-6" style={{ animationDuration: "40s" }}>
+            {[...FRANK_PORTRAITS.slice().reverse(), ...FRANK_PORTRAITS.slice().reverse()].map((item, i) => (
               <div
-                key={i}
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 border"
+                key={`row2-${i}`}
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 border relative group shadow-sm"
                 style={{ borderColor: "var(--border)" }}
               >
                 <img
-                  src={src}
-                  alt={`Frank ${i + 11}`}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/images/frank2.png";
-                  }}
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  loading="lazy"
                 />
               </div>
             ))}

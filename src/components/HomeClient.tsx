@@ -58,7 +58,7 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: "35+", label: "Projects Built" },
+  { value: "40+", label: "Projects Built" },
   { value: "80+", label: "GitHub Repos" },
   { value: "4+", label: "Open Source Engines" },
   { value: "2020", label: "Started Coding" },
@@ -148,6 +148,9 @@ export default function HomeClient() {
               <Link href="/builds" className="cta-btn">
                 View My Work
                 <ArrowRight size={14} />
+              </Link>
+              <Link href="/resume" className="cta-btn-ghost">
+                Resume / CV
               </Link>
               <Link href="/contact" className="cta-btn-ghost">
                 Link Up
@@ -583,7 +586,7 @@ export default function HomeClient() {
               className="font-mono text-2xl md:text-3xl lg:text-4xl font-light leading-snug mb-8"
               style={{ color: "var(--text-primary)" }}
             >
-              &ldquo;Software is the most powerful tool ever created for human leverage. I don&apos;t just write code — I bridge the gap between where a system is and where it needs to be.&rdquo;
+              &ldquo;Software is the most powerful tool ever created for human leverage. I don&apos;t just write code, I bridge the gap between where a system is and where it needs to be.&rdquo;
             </blockquote>
             <Link
               href="/philosophy"

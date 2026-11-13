@@ -34,6 +34,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
   { href: "/builds", label: "Builds" },
+  { href: "/resume", label: "Resume / CV" },
   { href: "/blog", label: "Blog" },
   { href: "/philosophy", label: "Philosophy" },
   { href: "/contact", label: "Contact" },
@@ -81,6 +82,14 @@ export default function Footer() {
                   {label}
                 </Link>
               ))}
+              <a
+                href="/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+                className="text-xs font-mono inline-flex items-center gap-1.5 pt-2 hover-line transition-colors"
+                style={{ color: "var(--accent)" }}
+              >
+                Download CV (PDF) ↓
+              </a>
             </div>
           </div>
 

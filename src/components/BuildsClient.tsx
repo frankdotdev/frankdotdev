@@ -393,7 +393,7 @@ export default function BuildsClient() {
           {/* Stats */}
           <div className="flex flex-wrap gap-6 mt-8">
             {[
-              { v: "35+", l: "Projects Built" },
+              { v: "40+", l: "Projects Built" },
               { v: "80+", l: "GitHub Repos" },
               { v: "4+", l: "Open Source Engines" },
               { v: "10K+", l: "Dev Hours" },

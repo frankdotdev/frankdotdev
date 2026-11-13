@@ -18,8 +18,8 @@ interface Message {
 
 const QUICK_PROMPTS = [
   "Who is Frank?",
-  "What is Stella AI?",
-  "What services does he offer?",
+  "Can I view or download your CV?",
+  "What are your top builds?",
   "How can I hire Frank?",
 ];
 

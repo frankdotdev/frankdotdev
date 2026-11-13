@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
   { href: "/builds", label: "Builds" },
+  { href: "/resume", label: "Resume" },
   { href: "/blog", label: "Blog" },
   { href: "/philosophy", label: "Philosophy" },
 ];
@@ -75,6 +76,16 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-3">
+            <a
+              href="/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex items-center gap-1.5 font-mono text-xs px-2.5 py-1 border hover-line"
+              style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+              title="Open Frank Kelechi Oge CV (PDF)"
+            >
+              CV (PDF)
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 rounded transition-colors duration-200"
@@ -111,21 +122,31 @@ export default function Navbar() {
           pointerEvents: menuOpen ? "all" : "none",
         }}
       >
-        <div className="flex flex-col justify-center items-center h-full gap-8">
+        <div className="flex flex-col justify-center items-center h-full gap-7 px-6 text-center">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="font-mono text-2xl tracking-widest uppercase"
+              className="font-mono text-xl tracking-widest uppercase"
               style={{ color: pathname === href ? "var(--text-primary)" : "var(--text-muted)" }}
               onClick={() => setMenuOpen(false)}
             >
               {label}
             </Link>
           ))}
-          <Link href="/contact" className="cta-btn mt-4" onClick={() => setMenuOpen(false)}>
-            Link Up
-          </Link>
+          <div className="flex flex-col gap-3 w-full max-w-xs mt-4">
+            <Link href="/contact" className="cta-btn text-center text-xs" onClick={() => setMenuOpen(false)}>
+              Link Up
+            </Link>
+            <a
+              href="/documents/Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+              download="Frank_Kelechi_Oge_Software_Engineer_CV.pdf"
+              className="cta-btn-ghost text-center text-xs"
+              onClick={() => setMenuOpen(false)}
+            >
+              Download CV (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </>
